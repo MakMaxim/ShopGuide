@@ -1,0 +1,89 @@
+.stock {
+	@include option(margin-top, 314);
+	background-image: $L-GRADIENT;
+	@include MOBILE{
+    @include optionmob(margin-top, 104);
+    background-image: none;
+  }
+	&__content {
+		@include option(width, $CONTENT-W);
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 auto;
+		@include MOBILE{
+	    @include optionmob(width, 632);
+	    justify-content: center;
+	  }
+	}
+
+	&__column {
+		@include option(padding-top, 73);
+		@include option(padding-bottom, 178);
+		@include option(margin-right, 7);
+		@include option(width, 514);
+		position: relative;
+		@include MOBILE{
+			@include optionmob(width, 630);
+	    @include optionmob(padding-top, 0);
+			@include optionmob(padding-bottom, 0);
+			@include optionmob(margin-right, 0);
+			text-align: center;
+	  }
+	}
+
+	&__title {
+		@extend %TITLE;
+		color: $BLACK;
+		@include MOBILE{
+	    @include optionmob(font-size, 35.5);
+			@include optionmob(letter-spacing, 1.78);
+			line-height: 1.77;
+	  }
+	}
+
+	&__text {
+		@include option(margin-top, 12);
+		white-space: pre-wrap;
+		line-height: 1.37;
+		color: $BLACK;
+		@include MOBILE{
+	    @include optionmob(font-size, 34);
+			@include optionmob(margin-top, 33);
+			line-height: 1.12;
+	  }
+	}
+
+	&__phones{
+		@include option(width, 577);
+		position: relative;
+		flex: 0 0 auto;
+		@include MOBILE{
+	    display: none;
+	  }
+	}
+	
+	&__phone{
+		position: absolute;
+		&_left{
+			@include option(bottom, -81);
+			@include option(left, 0);
+			@include option(width, 402);
+			@include option(height, 778);
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&_right{
+			@include option(bottom, 52);
+			@include option(right, 0);
+			@include option(width, 349);
+			@include option(height, 544);
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+.menu {
+	$width: 100%/7;
+	color: $WHITE;
+	@include MOBILE{
+    display: none;
+  }
+
+	&__body {
+		@include option(height, 431);
+		@include option(padding-top, 69);
+		position: relative;
+		overflow: visible;
+		box-sizing: border-box;
+		background-color: $LIGHT-BLUE;
+	}
+
+	&__column {
+		@include option(padding-left, 135);
+		@include option(padding-right, 135);
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	&__item {
+		flex: 0 1 $width;
+		&_favorites {
+			margin-right: $width*2;
+		}
+		&_active-item {
+			width: auto;
+		}
+	}
+
+	&__item-title {
+		@extend %TITLE;
+		position: relative;
+		display: inline-flex;
+    align-items: flex-end;
+		opacity: 0.3;
+		color: $WHITE;
+		white-space: pre-line;
+		height: 2em;
+		transition: opacity 0.3s ease-in-out;
+		.menu__item_active-item & {
+			@include option(border-bottom-width, 4);
+			border-style: solid;
+			border-color: $WHITE;
+			opacity: 1;
+		}
+		&:hover {
+			@include option(border-bottom-width, 4);
+			border-style: solid;
+			border-color: $WHITE;
+			opacity: 1;
+			cursor: pointer;
+		}
+	}
+
+	&__item-text {
+		@include option(font-size, 20);
+		@include option(width, 700);
+		@include option(padding-top, 40);
+		position: absolute;
+		line-height: 1.32;
+		color: $WHITE;
+		opacity: 0;
+		left: $width*3;
+		.menu__item_active-item & {
+			opacity: 1;
+		}
+	}
+
+	&__phone {
+		@include option(width, 369);
+		@include option(height, 576);
+		position: absolute;
+		top: 50%;
+		left: $width*1.5;
+		transform: translate(0, -50%);
+		z-index: 1;
+	}
+
+	&__phone-bg {
+		position: relative;
+		display: block;
+		width: 100%;
+		flex:  0 0 auto;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&__phone-carousel {
+		@include option(width, 243);
+		@include option(height, 432);
+		position: absolute;
+		top: 49%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		overflow: hidden;
+	}
+
+	&__phone-image {
+		display: block;
+		flex: 0 0 auto;
+		width: 100%;
+		img{
+			display: block;	
+			width: 100%;
+		}
+	}
+}

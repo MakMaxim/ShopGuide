@@ -1,0 +1,109 @@
+.button {
+  font-family: $BASE-FONT;
+  text-decoration: none;
+
+  &_transparentBtn {
+    @include option(width, 200);
+    @include option(height, 40);
+    @include option(font-size, 15);
+    @include option(border-width, 2);
+    @include option(border-radius, 6);
+    display: flex;
+    align-items: center;
+    color: $WHITE;
+    background: rgba($WHITE, 0);
+    border-style: solid;
+    border-color: $WHITE;
+    transition: background 0.3s ease-in-out;
+    @include MOBILE{
+      @include optionmob(width, 442);
+      @include optionmob(height, 74);
+      @include optionmob(font-size, 28.5);
+      @include optionmob(border-width, 3);
+      @include optionmob(border-radius, 6);
+    }
+    &:hover {
+      background: rgba($WHITE, 0.5);
+    }
+  }
+
+  &_blueBtn {
+    @include option(border-radius, 10);
+    display: flex;
+    align-items: center;
+    color: $WHITE;
+    background-color: $LIGHT-BLUE;
+    transition: background 0.3s ease-in-out;
+    @include MOBILE{
+      @include optionmob(border-radius, 10);
+    }
+    &:hover {
+      background: rgba(#3BB9B8, 1);
+    }
+  }
+
+  &_partner {
+    position: relative;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  &_app {
+    @include option(width, 190);
+    @include option(height, 56);
+    @include option(border-radius, 6);
+    @include option(border-width, 2);
+    border-style: solid;
+    background: rgba($WHITE, 0);
+    border-color: rgba($WHITE, 0.3);
+    transition: background 0.3s ease-in-out;
+    @include MOBILE{
+      @include optionmob(width, 238);
+      @include optionmob(height, 70);
+      @include optionmob(border-radius, 6);
+      @include optionmob(border-width, 2);
+    }
+    &:hover {
+      background: rgba($WHITE, 0.5);
+    }
+  }
+
+  &_down {
+    @include option(width, 277);
+    @include option(height, 49);
+    @include option(font-size, 14);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-around;
+    text-transform: uppercase;
+    @include MOBILE{
+      display: none;
+    }
+  }
+
+  &_ourpartner {
+    @include option(width, 360);
+    @include option(height, 64);
+    @include option(font-size, 20);
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: 700;
+    @include MOBILE{
+      @include optionmob(width, 440);
+      @include optionmob(height, 74);
+      @include optionmob(font-size, 30);
+    }
+  }
+
+  &_contact {
+    @include option(padding-left, 16);
+    @include option(padding-right, 16);
+    justify-content: space-between;
+    box-sizing: border-box;
+    @include MOBILE{
+      @include optionmob(padding-left, 62);
+      @include optionmob(padding-right, 62);
+    }
+  }
+}

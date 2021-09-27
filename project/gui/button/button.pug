@@ -1,0 +1,8 @@
+mixin button(content, params)
+	#{content.tag||"button"}.button&attributes(attributes)&attributes(content.attr)
+		if content.icon
+			.button__icon
+				img&attributes(content.icon)
+		if content.text
+			span.button__text!=content.text
+		block

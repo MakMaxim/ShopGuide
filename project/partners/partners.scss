@@ -1,0 +1,159 @@
+$buttons-size: 38;
+$buttons-size-m: 40;
+$logo-size: 100%/7;
+$anim: 0.3s ease-in-out;
+.partners {
+	@include option(padding-top, 72);
+	@include MOBILE{
+		@include optionmob(padding-top, 92);
+	}
+
+	&__title {
+		@include option(margin-bottom, 35);
+		@include option(font-size, 36);
+		@include option(letter-spacing, 2.07);
+		@extend %TITLE;
+		line-height: 1;
+		color: $ORANGE;
+		text-align: center;
+		@include MOBILE{
+	    @include optionmob(font-size, 35.5);
+			@include optionmob(letter-spacing, 1.78);
+			line-height: 1.77;
+	  }
+	}
+
+	&__logos {
+		@include option(margin-top, 16);
+		@include option(height, 186);
+		position: relative;
+		background-color: $ORANGE;
+		display: flex;
+		align-items: center;
+		@include MOBILE{
+	    @include optionmob(height, 217);
+			@include optionmob(margin-top, 35);
+	  }
+	}
+
+	&__container{
+		@include option(width, $CONTENT-W);
+		margin: 0 auto;
+		overflow: hidden;
+		@include MOBILE{
+	    @include optionmob(width, 607);
+	  }
+	}
+
+	.swiper-wrapper{
+		align-items: center;
+		width: 100%;
+		margin: auto;
+	}
+
+	&__arrows{
+		@include option(width, $ARROWS-W);
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		top: auto;
+		bottom: auto;
+		left: 0;
+		right: 0;
+		@include MOBILE{
+	    @include optionmob(width, 707);
+	  }
+	}
+
+	&__arrow{
+		@include option(width, $buttons-size);
+		@include option(height, $buttons-size);
+		position: relative;
+		background: rgba($ARROW-BG, 0.25);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background $anim;
+		border: none;
+		padding: 0;
+		@include MOBILE{
+	    @include optionmob(width, $buttons-size-m);
+			@include optionmob(height, $buttons-size-m);
+	  }
+		svg{
+			position: absolute;
+			height: 60%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		path{
+			fill: $ARROW-BG;
+			transition: fill $anim;
+		}
+		&_prev{
+			svg{
+				left: 45%;
+			}
+		}
+		&_next{
+			svg{
+				left: 55%;
+			}
+		}
+		&:hover{
+			background: rgba($ARROW-BG, 1);
+			svg{
+				path{
+					fill: $WHITE;
+				}
+			}
+		}
+	}
+
+	&__logo{
+		display: block;
+		flex: 0 0 auto;
+		width: $logo-size;
+		opacity: 0.25;
+		transition: opacity $anim;
+		cursor: pointer;
+		// @include MOBILE{
+	 //    width: 100%/10;
+	 //  }
+		img{
+			display: block;
+			width: 100%;
+		}
+		&_active{
+			opacity: 1;
+		}
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+	&__info{
+		@include option(padding-top, 49);
+		@include option(padding-bottom, 47);
+		text-align: center;
+		@include MOBILE{
+	    @include optionmob(padding-top, 57);
+			@include optionmob(padding-bottom, 62);
+	  }
+	}
+
+	&__text {
+		@include option(margin-bottom, 40);
+		@include option(font-size, 24);
+		line-height: 1;
+		letter-spacing: 0.05em;
+		text-align: center;
+		white-space: pre-wrap;
+		color: rgba($BLACK, 0.9);
+		@include MOBILE{
+	    @include optionmob(margin-bottom, 49);
+			@include optionmob(font-size, 34);
+			line-height: 1.12;
+	  }
+	}
+}

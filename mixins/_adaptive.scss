@@ -1,0 +1,32 @@
+@mixin MOBILE() {
+  @media ((min-width: $MOBILE) and max-width: $TABLET - 1) {
+    @content;
+  }
+}
+
+
+@mixin TABLET() {
+  @media ((min-width: $TABLET) and max-width: $TABLET-L - 1) {
+    @content;
+  }
+}
+
+
+@mixin TABLET-L() {
+  @media ((min-width: $TABLET-L) and max-width: $DESKTOP - 1) {
+    @content;
+  }
+}
+
+@mixin DESKTOP() {
+  @media (min-width: $DESKTOP) {
+    @content;
+  }
+}
+
+
+
+
+// @include MOBILE{
+//   // code...
+// }

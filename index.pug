@@ -1,0 +1,38 @@
+block mixins
+	include ./project/project
+
+doctype html
+html(lang='ru')
+	head
+		title ShopGuide
+		link(rel='stylesheet' href='css/style.css')
+		link(rel='icon' href='images/favicon.ico')
+		link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+		meta(http-equiv='Content-type' content='text/html;charset=utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+	body
+		include pugFiles/data
+		.custom-page
+
+			+mainblock(copyright.mainblock)
+
+
+			+advantages(copyright.advantages)
+				
+
+			+menu(copyright.menu)
+
+
+			+stock(copyright.stock)
+		
+
+			+partners(copyright.partners)
+			
+
+			+footer(copyright.footer)
+		
+
+
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+		script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+		script(src='js/script.js')

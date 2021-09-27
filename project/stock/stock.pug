@@ -1,0 +1,16 @@
+mixin stock(content,params)   
+	section.stock&attributes(attributes)
+		.stock__content
+			.stock__column
+				h2.stock__title= content.title
+				p.stock__text!= content.text
+			.stock__phones
+				each item in content.stockList
+					+stock__phone(item)
+
+
+
+mixin stock__phone(content,params)
+	.stock__phone&attributes(attributes)&attributes(content.attr)
+		img&attributes(content.image)
+		block

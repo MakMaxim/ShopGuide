@@ -1,0 +1,81 @@
+.footer {
+  position: relative;
+
+  &__bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg.jpg') no-repeat center / cover;
+  }
+
+  &__content {
+    @include option(width, $ARROWS-W);
+    @include option(padding-top, 45);
+    @include option(padding-bottom, 38);
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $WHITE;
+    @include MOBILE{
+      @include optionmob(width, 490);
+      @include optionmob(padding-top, 94);
+      @include optionmob(padding-bottom, 38);
+      flex-direction: column;
+    }
+  }
+  &__info{
+    @include MOBILE{
+      @include optionmob(padding-top, 47);
+      order: 2;
+    }
+  }
+  &__text {
+    @include option(font-size, 14);
+    @include option(line-height, 11);
+    @include option(margin-bottom, 16);
+    display: inline-block;
+    @include MOBILE{
+      @include optionmob(font-size, 22);
+      @include optionmob(margin-bottom, 32);
+      @include optionmob(margin-left, 142);
+    }
+  }
+
+  &__logo{
+    @include option(width, 18);
+    @include option(height, 18);
+    @include MOBILE{
+      @include optionmob(width, 28);
+      @include optionmob(height, 28);
+    }
+  }
+
+  &__links{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__item{
+    @include option(font-size, 12);
+    @include option(line-height, 12);
+    @include option(margin-right, 55);
+    text-transform: uppercase;
+    opacity: 0.4;
+    transition: opacity 0.3s ease-in-out;
+    @include MOBILE{
+      @include optionmob(font-size, 15);
+      @include optionmob(margin-right, 30);
+
+    }
+    &:hover{
+      opacity: 1;
+    } 
+  }
+  
+  &__link{
+    display: inline-block;
+    color: $WHITE;
+  }
+}

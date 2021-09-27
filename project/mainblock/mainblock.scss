@@ -1,0 +1,154 @@
+.mainblock {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg.jpg') no-repeat center / cover;
+  }
+
+  &__header {
+    @include option(padding-top, 35);
+    @include option(padding-right, 160);
+    @include option(padding-bottom, 159);
+    @include option(padding-left, 160);
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    @include MOBILE{
+      display: none;
+    }
+  }
+
+  &__content {
+    @include option(width, $CONTENT-W);
+    position: relative;
+    display: flex;
+    margin: auto;
+    color: $WHITE;
+  }
+
+  &__icons {
+    @include option(width, 248);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__app {
+    @include option(width, 400);
+    @include option(margin-top, 80);
+    @include option(margin-left, 89);
+    text-align: right;
+    @include MOBILE{
+      @include optionmob(width, 504);
+      @include optionmob(margin-top, 125);
+      @include optionmob(margin-bottom, 135);
+      @include optionmob(margin-left, 30);
+    }
+  }
+
+  &__bubble {
+    @include option(font-size, 12);
+    @include option(margin-bottom, 5);
+    display: inline-block;
+    color: $WHITE;
+    text-transform: uppercase;
+    @include MOBILE{
+      @include optionmob(font-size, 14);
+    }
+    span {
+      @include option(padding, 7);
+      display: inline-block;
+      background: $LIGHT-BLUE;
+      @include MOBILE{
+        @include optionmob(padding-top, 10);
+        @include optionmob(padding-bottom, 9);
+        @include optionmob(padding-right, 14);
+        @include optionmob(padding-left, 14);
+      }
+    }
+    &:after {
+      @include option(border-top-width, 10); 
+      @include option(border-right-width, 10);
+      @include MOBILE{
+        @include optionmob(border-top-width, 11); 
+        @include optionmob(border-right-width, 11);
+      }
+      content:"";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: #15b5b3 transparent transparent transparent;
+    }
+  }
+
+  &__phone {
+    @include option(width, 325);
+    @include option(height, 580);
+    margin: 0 0 0 auto;
+    overflow: hidden;
+    img{
+      display: block;
+      width: 100%;
+    }
+    @include MOBILE{
+      display: none;
+    }
+  }
+
+  &__buttons-title {
+    @include option(padding-top, 23);
+    @include option(padding-bottom, 15);
+    @include option(font-size, 16); 
+    @include MOBILE{
+      @include optionmob(font-size, 32);
+      @include optionmob(padding-top, 28);
+      @include optionmob(padding-bottom, 14);
+    }
+    display: flex;
+    text-align: center;
+    align-items: center;
+    span{
+      @include option(margin-left, 17);
+      @include option(margin-right, 17);
+    }
+    &:before {
+      @include option(height, 1);
+      content: "";
+      background-color: $WHITE;
+      width: 100%;
+      @include MOBILE{
+        opacity: 0.3;
+      } 
+    }
+    &:after {
+      @include option(height, 1);
+      content: "";
+      background-color: $WHITE;
+      width: 100%;
+      @include MOBILE{
+        opacity: 0.3;
+      }  
+    }
+  }
+
+  &__buttons-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__arrow {
+    @include option(width, 36);
+    @include option(height, 18);
+    position: relative;
+    animation: arrowdown 1.2s infinite ease;
+  }
+}
+
+@keyframes arrowdown{
+  0%{top: 0px;}
+  50%{top: 18px;}
+  100%{top: 0px;}
+}

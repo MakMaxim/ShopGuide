@@ -1,0 +1,14 @@
+%DEFAULT{
+	@include option(font-size, 20);
+	font-family: $BASE-FONT;
+}
+
+
+%TITLE{
+	@include option(font-size, 32);
+	@include option(letter-spacing, 1.69);
+	font-family: $BASE-FONT;
+	line-height: 1;
+	font-weight: bold;
+	text-transform: uppercase;
+}

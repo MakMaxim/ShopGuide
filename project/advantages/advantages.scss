@@ -1,0 +1,74 @@
+.advantages {
+	color: $BLACK;
+	&__content{
+		@include option(width, 1326);
+		@include option(padding-top, 110);
+		@include option(padding-bottom, 135);
+		margin: auto;
+		@include MOBILE{
+      @include optionmob(width, 642);
+			@include optionmob(padding-top, 25);
+			@include optionmob(padding-bottom, 0);
+    }
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		@include MOBILE{
+      flex-wrap:wrap;
+			flex: 0 0 50%;
+    }
+	}
+	&__card {
+		text-align: center;
+		@include MOBILE{
+      &_like{
+				order: 1;
+			}
+			&_geo{
+				order: 4;
+			}
+			&_bell{
+				order: 2;
+			}
+			&_sheet{
+				order: 3;
+			}
+    }
+	}
+
+	&__icon {
+		@include option(height, 75);
+		display: inline-flex;
+		@include MOBILE{
+      @include optionmob(height, 95);
+      @include optionmob(margin-top, 50);
+    }
+	}
+
+	&__title {
+		@extend %TITLE;
+		@include option(font-size, 22);
+		@include option(letter-spacing, 0.15);
+		@include option(margin-top, 36);
+		@include option(margin-bottom, 13);
+		@include MOBILE{
+      @include optionmob(font-size, 22);
+			@include optionmob(letter-spacing, 0.15);
+			@include optionmob(margin-top, 28);
+			@include optionmob(margin-bottom, 15);
+    }
+	}
+
+	&__text {
+		@include option(font-size, 17.5);
+		@include option(letter-spacing, 0.19);
+		line-height: 1.2;
+		white-space: pre-wrap;
+		@include MOBILE{
+      @include optionmob(font-size, 22);
+    }
+	}
+}

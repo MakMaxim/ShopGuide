@@ -1,0 +1,31 @@
+mixin menu(content,params)
+	section.menu&attributes(attributes)
+		.menu__body
+			.menu__column
+				.swiper-wrapper
+					each item in content.list
+						+menu__item(item)
+						
+			+menu__phone(content)
+
+
+mixin menu__item(content,params)
+	.menu__item&attributes(attributes)&attributes(content.attr)
+		.menu__item-title!= content.title  
+		.menu__item-text!= content.text 
+
+
+mixin menu__phone(content,params)
+	.menu__phone&attributes(attributes)
+		.menu__phone-bg
+			img&attributes(content.phone.attr)
+		.menu__phone-carousel
+			.swiper-wrapper
+				each item in content.list
+					+menu__phone-image(item)
+
+
+mixin menu__phone-image(content,params)
+	.menu__phone-image&attributes(attributes)
+		img&attributes(content.image)
+					

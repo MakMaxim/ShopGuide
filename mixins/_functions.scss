@@ -1,0 +1,8 @@
+@function vw($value) {
+ 	@return ($value)/$DISIGN-W*100vw
+};
+
+
+@function vws($value) {
+  @return ($value)/$DISIGN-Wm*100vw
+}

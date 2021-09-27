@@ -1,0 +1,17 @@
+@mixin option($property, $value) {
+  #{$property}: vw($value);
+}
+
+
+@mixin optionmob($property, $value) {
+  #{$property}: vws($value);
+}
+
+// @mixin option($property, $value) {
+//   @if 100vw > 750 {
+//   	#{$property}: vw($value);
+//   } @else {
+//   	#{$property}: vws($value);
+//   }	
+//   // #{$property}: vws($value);
+// }

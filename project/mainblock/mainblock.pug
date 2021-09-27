@@ -1,0 +1,33 @@
+mixin mainblock(content,params)
+	section.mainblock
+		.mainblock__bg
+		+mainblock__header(content)
+		.mainblock__content
+			+mainblock__app(content)
+			+mainblock__phone(content.phone)
+		+button(content.buttonDown)
+			span(style='order:-1').button__text!= content.buttonDown.text
+	
+mixin mainblock__header(content,params)
+	.mainblock__header&attributes(attributes)
+		.mainblock__icons
+			+social-buttons()
+		+button(content.buttonPart)
+
+mixin mainblock__app(content,params)
+	.mainblock__app&attributes(attributes)
+		.mainblock__title
+			.mainblock__bubble
+				span!= content.title
+			include svg/shopguide.svg
+		.mainblock__buttons
+			.mainblock__buttons-title 
+				span!= content.app.title
+			.mainblock__buttons-list
+				each item in content.app.list
+					+button(item)
+
+mixin mainblock__phone(content,params)
+	.mainblock__phone&attributes(attributes)
+		img&attributes(content.attr)
+

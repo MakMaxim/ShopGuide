@@ -1,0 +1,15 @@
+mixin footer(content,params)
+  footer.footer&attributes(attributes)
+    .footer__bg
+    .footer__content
+      .footer__info
+        span.footer__text!= content.text
+        ul.footer__links
+          each item in content.list
+            +footer__item(item)
+      +button(content.button) 
+
+
+mixin footer__item(content,params)
+  li.footer__item&attributes(attributes)
+    a.footer__link&attributes(content.attr)!= content.text

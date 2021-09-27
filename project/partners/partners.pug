@@ -1,0 +1,22 @@
+mixin partners(content,params)
+	section.partners&attributes(attributes)
+		h2.partners__title!= content.title
+		.partners__logos
+			.partners__container
+				.swiper-wrapper
+					each item in content.list
+						+partners__logo(item)
+			.partners__arrows
+				button.partners__arrow.partners__arrow_prev
+					include svg/arrow_left.svg
+				button.partners__arrow.partners__arrow_next
+					include svg/arrow_right.svg
+			
+		.partners__info
+			p.partners__text!= content.text
+			+button(content.button).partners__button
+
+
+mixin partners__logo(content,params)
+	.partners__logo&attributes(attributes)&attributes(content.attr)
+		img&attributes(content.image)

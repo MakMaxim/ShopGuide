@@ -1,0 +1,36 @@
+-
+	let mainblockIcons = [
+		{
+			attr: {href:'', class:'social-buttons__item_fb'},
+			image: {src: 'images/icon_fb.svg', alt: 'Логотип фейсбук'},
+		},
+		{
+			attr: {href:'', class:'social-buttons__item_ig'},
+			image: {src: 'images/icon_ig.svg', alt: 'Логотип инстаграмм'},
+		},
+		{
+			attr: {href:'', class:'social-buttons__item_tw'},
+			image: {src: 'images/icon_tw.svg', alt: 'Логотип твиттер'},
+		},
+		{
+			attr: {href:'', class:'social-buttons__item_vk'},
+			image: {src: 'images/icon_vk.svg', alt: 'Логотип вконтакте'},
+		},
+		{
+			attr: {href:'', class:'social-buttons__item_ok'},
+			image: {src: 'images/icon_ok.svg', alt: 'Логотип одноклассники'},
+		},
+	];
+
+
+mixin social-buttons(content, params)
+	.social-buttons&attributes(attributes)
+		each item in mainblockIcons
+			+social-buttons__item(item)
+		block
+
+
+mixin social-buttons__item(content,params)
+	a.social-buttons__item&attributes(attributes)&attributes(content.attr)
+		img&attributes(content.image)
+		

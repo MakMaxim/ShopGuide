@@ -1,0 +1,19 @@
+mixin advantages(content,params)
+	section.advantages&attributes(attributes)
+		.advantages__content
+			ul.advantages__cards
+				each item in content.list
+					+advantages__card(item)
+			block
+
+mixin advantages__card(content,params)
+	li.advantages__card&attributes(attributes)&attributes(content.attr)
+		.advantages__icon
+			img&attributes(content.icon)
+		h3.advantages__title!= content.title 
+		span.advantages__text!= content.text	
+		block
+
+
+
+	

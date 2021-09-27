@@ -1,0 +1,44 @@
+$buttons-size: 39;
+$border-size: 30;
+
+.social-buttons{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	&__item{
+		@include option(width, $buttons-size);
+		@include option(height, $buttons-size);
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		
+		&:before{
+			@include option(width, $border-size);
+			@include option(height, $border-size);
+			@include option(border-width, 1);
+			@include option(border-radius, 3);
+			border-style: solid;
+			border-color: $WHITE;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			display: block;
+			content: "";
+			transform: rotate(45deg);
+			transition: background 0.3s ease-in-out;
+		}
+		img{
+			position: relative;
+		}
+		&:hover {
+			&:before{
+				background: rgba($WHITE, 0.5);
+			}
+		}
+	}
+}
